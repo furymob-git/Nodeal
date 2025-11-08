@@ -1,4 +1,7 @@
-title: Ma Documentation
-description: Documentation complète du projet
-theme: jekyll-theme-cayman
+title: Nodeal
+description: Full doc
+
+minimal_mistakes_skin: neon
 markdown: kramdown
+
+search: true
