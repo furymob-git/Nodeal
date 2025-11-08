@@ -1,9 +1,15 @@
 title: Nodeal
 description: Full doc
 
-remote_theme: pages-themes/midnight@v0.2.0
-plugins:
-- jekyll-remote-theme
+lang: en
+icon: 🔧
+
+repo_theme_light: default
+repo_theme_dark: dark
+repo_trophies:
+  enabled: true
+  theme_light: flat
+  theme_dark: gitdimmed
 
 markdown: kramdown
 
