@@ -2,7 +2,7 @@
 layout: home
 
 hero:
-  name: "Nodeal"
+  name: "Nodeal Framework"
   text: "Break Engine Limits"
   tagline: "A seamless, modular, and optimized Roblox framework tailored for power users."
   actions:

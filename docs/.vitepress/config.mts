@@ -5,9 +5,9 @@ export default defineConfig({
   description: "A seamless Roblox framework built to break engine limits.",
   cleanUrls: true,
   base: '/Nodeal/',
-  head: [['link', { rel: 'icon', href: '/logo.png' }]],
+  head: [['link', { rel: 'icon', href: '/Nodeal/logo.png' }]],
   themeConfig: {
-    logo: '/logo.png', // Placeholder
+    logo: '/logo.png', // VitePress handles base automatically for themeConfig, but let's be safe if needed or leave as is. Actually VitePress handles themeConfig.logo automatically with base. I will only change HEAD.
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Guide', link: '/guide/getting-started' },
