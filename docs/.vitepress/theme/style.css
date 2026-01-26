@@ -20,11 +20,27 @@
 
 /* 1. Global Background Atmosphere */
 /* Adds a subtle glowing mesh gradient behind the hero section */
+/* 1. Global Background Atmosphere & Grid */
 .VPContent {
+  background-color: #030408;
   background-image:
+    linear-gradient(rgba(168, 85, 247, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(168, 85, 247, 0.05) 1px, transparent 1px),
     radial-gradient(circle at 50% 10%, rgba(168, 85, 247, 0.15) 0%, transparent 60%),
     radial-gradient(circle at 90% 40%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+  background-size: 50px 50px, 50px 50px, 100% 100%, 100% 100%;
   background-attachment: fixed;
+  animation: moveGrid 20s linear infinite;
+}
+
+@keyframes moveGrid {
+  0% {
+    background-position: 0 0, 0 0, center top, center center;
+  }
+
+  100% {
+    background-position: 50px 50px, 50px 50px, center top, center center;
+  }
 }
 
 /* 2. Supercharged Hero Text */
@@ -60,29 +76,44 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* 4. Feature Cards - "Holographic" feel */
+/* Animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+  }
+
+  50% {
+    box-shadow: 0 0 25px rgba(236, 72, 153, 0.6);
+  }
+
+  100% {
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+  }
+}
+
+/* 4. Feature Cards */
 .VPFeature {
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  /* More subtle border */
   backdrop-filter: blur(10px);
   border-radius: 16px;
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-.VPFeature:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 20px 40px -10px rgba(168, 85, 247, 0.2);
-  border-color: rgba(168, 85, 247, 0.5);
-  /* Glows purple on hover */
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%);
-}
-
-.VPFeature .icon {
-  background: rgba(168, 85, 247, 0.1);
-  border-radius: 8px;
-  padding: 8px;
-  box-shadow: 0 0 15px rgba(168, 85, 247, 0.2);
+  /* Add subtle float delay per card if possible, but global float for now */
+  animation: float 6s ease-in-out infinite;
 }
 
 /* 5. Buttons - Neon Glow */
@@ -92,14 +123,32 @@
   color: white !important;
   font-weight: 600;
   border-radius: 24px;
-  box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+  animation: pulse 3s infinite;
   transition: all 0.3s ease;
 }
 
 .VPButton.brand:hover {
-  box-shadow: 0 0 30px rgba(236, 72, 153, 0.6);
-  transform: translateY(-2px);
+  animation: none;
+  /* Stop pulse on hover to keep steady glow */
+  box-shadow: 0 0 40px rgba(236, 72, 153, 0.8);
+  transform: translateY(-2px) scale(1.05);
   background-image: linear-gradient(to right, #9333ea, #db2777);
+}
+
+.VPFeature:hover {
+  animation-play-state: paused;
+  /* Pause float on hover */
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 20px 50px -10px rgba(168, 85, 247, 0.3);
+  border-color: rgba(168, 85, 247, 0.6);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
+}
+
+.VPFeature .icon {
+  background: rgba(168, 85, 247, 0.15);
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
 }
 
 .VPButton.alt {
@@ -112,7 +161,8 @@
 .VPButton.alt:hover {
   border-color: #3b82f6;
   color: #3b82f6;
-  box-shadow: 0 0 10px rgba(59, 130, 246, 0.2);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+  background: rgba(59, 130, 246, 0.1);
 }
 
 /* 6. Typography adjustments for "Tech" feel */
