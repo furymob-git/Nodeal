@@ -1,0 +1,5 @@
+theme:
+  name: material
+  palette:
+    primary: deep purple
+    accent: teal
