@@ -4,6 +4,7 @@ export default defineConfig({
   title: "Nodeal",
   description: "A seamless Roblox framework built to break engine limits.",
   cleanUrls: true,
+  appearance: 'dark',
   base: '/Nodeal/',
   head: [['link', { rel: 'icon', href: '/Nodeal/logo.png' }]],
   themeConfig: {
