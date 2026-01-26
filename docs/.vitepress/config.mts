@@ -29,7 +29,8 @@ export default defineConfig({
           items: [
             { text: 'Services', link: '/guide/services' },
             { text: 'Built-ins', link: '/guide/builtins' },
-            { text: 'Proxies & Metamethods', link: '/guide/proxies' }
+            { text: 'Proxies & Metamethods', link: '/guide/proxies' },
+            { text: 'Decorators', link: '/guide/decorators' }
           ]
         }
       ],
