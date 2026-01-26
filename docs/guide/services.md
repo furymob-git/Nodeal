@@ -8,16 +8,22 @@ You can register a new service anywhere in your codebase using `game:RegisterSer
 
 ```lua
 -- Define the service structure first for cleaner code
-local PlayerData = {}
-PlayerData.Players = {}
+local NetworkService = {}
 
+local Network = {}
+Network.__index = Network
+Network.__type = "Network"
 
-function PlayerData:GetMoney(player)
-    return self.Players[player] or 0
+function Network:Fire(...: any?): ()
+    ...
+end
+
+function NetworkService:GetNetwork(network: string): Network
+    ...
 end
 
 -- Register the service
-game:RegisterService("PlayerData", PlayerData)
+game:RegisterService("NetworkService", NetworkService)
 ```
 
 ::: tip Advanced Usage: Service Wrapping
@@ -31,9 +37,8 @@ local TweenService = game:GetService("TweenService")
 local TweenServiceProxy = newproxy(TweenService)
 
 -- Extend functionality directly
-function TweenServiceProxy:IsTweening(instance)
-    print("Checking tween status for:", instance)
-    return false -- Your custom logic
+function TweenServiceProxy:IsTweening(instance: Instance): boolean
+    ...
 end
 
 -- Register it back, effectively overriding 'TweenService' in your Nodeal environment
