@@ -3,8 +3,8 @@ layout: home
 
 hero:
   name: "Nodeal Framework"
-  text: "Break Engine Limits"
-  tagline: "A seamless, modular, and optimized Roblox framework tailored for power users."
+  text: "The Future of Roblox Dev"
+  tagline: "Secure, High-Performance, and completely Studio-Native. Break the engine limits without breaking your workflow."
   actions:
     - theme: brand
       text: Get Started
@@ -14,13 +14,16 @@ hero:
       link: https://github.com/furymob-git/Nodeal
 
 features:
-  - icon: ⚡️
-    title: Unrivaled Performance
-    details: Optimized to the core, ensuring your game runs smoother than ever before.
-  - icon: 🧩
-    title: Modular Architecture
-    details: Use only what you need. Nodeal is built to be flexible and lightweight.
+  - icon: 🛡️
+    title: Uncompromised Security
+    details: Enterprise-grade protection baked into the core. Secure your game logic instantly without changing how you write code.
   - icon: 🔓
-    title: Unlock Limits
-    details: Access features and workflows that push the boundaries of the Roblox engine.
+    title: Engine Extensions
+    details: Inject custom Services, wrap built-in libraries, and extend the DataModel with powerful proxies and metamethods.
+  - icon: 🛠️
+    title: 100% Studio Native
+    details: Forget complex external toolchains. Our dedicated Plugin handles dependency injection and optimizations directly in Studio.
+  - icon: ⚡
+    title: Unrivaled Performance
+    details: A lightweight architecture optimized down to the metal. No bloated code, just raw speed and flexibility.
 ---
