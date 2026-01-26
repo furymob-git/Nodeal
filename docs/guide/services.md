@@ -23,8 +23,31 @@ end
 game:RegisterService("PlayerData", PlayerData)
 ```
 
-::: tip Advanced Usage
-You can also pass a **newproxy** instead of a table as the `serviceDefinition`. This is useful if you want your service to have custom metamethod behavior or be a proxy-wrapped object.
+::: tip Advanced Usage: Service Wrapping
+You can wrapping existing Roblox services using `newproxy` and override their behavior.
+
+```lua
+-- Get the original service
+local RealTweenService = game:GetService("TweenService")
+
+-- Create a proxy wrapper
+local MyTweenService = newproxy(RealTweenService)
+local meta = getmetatable(MyTweenService)
+
+-- Override or extend functionality via metamethods
+meta.__index = function(self, key)
+    if key == "Create" then
+        return function(self, ...)
+             print("Intercepted Tween Creation!")
+             return RealTweenService:Create(...)
+        end
+    end
+    return RealTweenService[key]
+end
+
+-- Register it back, effectively overriding 'TweenService' in your Nodeal environment
+game:RegisterService("TweenService", MyTweenService)
+```
 :::
 
 ## Retrieving a Service
