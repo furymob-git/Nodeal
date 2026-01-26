@@ -36,3 +36,22 @@ game:RegisterBuiltIn("os", {
     end
 })
 ```
+
+### Advanced: Wrapping Built-ins with Proxy
+
+Just like services, you can use `newproxy` to wrap a standard library.
+
+```lua
+local RealOS = os
+local MyOS = newproxy(RealOS)
+local meta = getmetatable(MyOS)
+
+meta.__index = function(self, key)
+    if key == "time" then
+        return function() return 0 end -- Freeze time!
+    end
+    return RealOS[key]
+end
+
+game:RegisterBuiltIn("os", MyOS)
+```
