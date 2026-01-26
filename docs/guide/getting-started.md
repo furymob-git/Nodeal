@@ -8,7 +8,7 @@ Welcome to **Nodeal**. This framework is designed for a **100% Studio** workflow
 
 The Nodeal Plugin is essential. It handles pre-parsing, dependency injection, and optimizations.
 
-[**Download Nodeal Plugin**](https://create.roblox.com/store/asset/0000000000) *(Template Link)*
+[**Download Nodeal Plugin**](https://create.roblox.com/store/asset/0000000000)
 
 ### 2. Setup via Plugin
 
