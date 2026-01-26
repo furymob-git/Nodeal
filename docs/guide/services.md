@@ -11,9 +11,6 @@ You can register a new service anywhere in your codebase using `game:RegisterSer
 local PlayerData = {}
 PlayerData.Players = {}
 
-function PlayerData:Init()
-    print("PlayerData Service Initialized")
-end
 
 function PlayerData:GetMoney(player)
     return self.Players[player] or 0
