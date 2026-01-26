@@ -43,15 +43,12 @@ Just like services, you can use `newproxy` to wrap a standard library.
 
 ```lua
 local RealOS = os
-local MyOS = newproxy(RealOS)
-local meta = getmetatable(MyOS)
+local OSProxy = newproxy(RealOS)
 
-meta.__index = function(self, key)
-    if key == "time" then
-        return function() return 0 end -- Freeze time!
-    end
-    return RealOS[key]
+-- Override or Add functions directly
+function OSProxy.time()
+    return 0 -- Freeze time!
 end
 
-game:RegisterBuiltIn("os", MyOS)
+game:RegisterBuiltIn("os", OSProxy)
 ```

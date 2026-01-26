@@ -24,29 +24,23 @@ game:RegisterService("PlayerData", PlayerData)
 ```
 
 ::: tip Advanced Usage: Service Wrapping
-You can wrapping existing Roblox services using `newproxy` and override their behavior.
+You can wrap existing Roblox services using `newproxy` and extend them directly.
 
 ```lua
 -- Get the original service
-local RealTweenService = game:GetService("TweenService")
+local TweenService = game:GetService("TweenService")
 
 -- Create a proxy wrapper
-local MyTweenService = newproxy(RealTweenService)
-local meta = getmetatable(MyTweenService)
+local TweenServiceProxy = newproxy(TweenService)
 
--- Override or extend functionality via metamethods
-meta.__index = function(self, key)
-    if key == "Create" then
-        return function(self, ...)
-             print("Intercepted Tween Creation!")
-             return RealTweenService:Create(...)
-        end
-    end
-    return RealTweenService[key]
+-- Extend functionality directly
+function TweenServiceProxy:IsTweening(instance)
+    print("Checking tween status for:", instance)
+    return false -- Your custom logic
 end
 
 -- Register it back, effectively overriding 'TweenService' in your Nodeal environment
-game:RegisterService("TweenService", MyTweenService)
+game:RegisterService("TweenService", TweenServiceProxy)
 ```
 :::
 
