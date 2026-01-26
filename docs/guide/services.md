@@ -7,20 +7,25 @@ Nodeal revolutionizes how you manage game logic by unifying Roblox's standard se
 You can register a new service anywhere in your codebase using `game:RegisterService`.
 
 ```lua
-game:RegisterService("PlayerData", {
-    -- Service State
-    Players = {},
+-- Define the service structure first for cleaner code
+local PlayerData = {}
+PlayerData.Players = {}
 
-    -- Service Methods
-    Init = function(self)
-        print("PlayerData Service Initialized")
-    end,
+function PlayerData:Init()
+    print("PlayerData Service Initialized")
+end
 
-    GetMoney = function(self, player)
-        return self.Players[player] or 0
-    end
-})
+function PlayerData:GetMoney(player)
+    return self.Players[player] or 0
+end
+
+-- Register the service
+game:RegisterService("PlayerData", PlayerData)
 ```
+
+::: tip Advanced Usage
+You can also pass a **newproxy** instead of a table as the `serviceDefinition`. This is useful if you want your service to have custom metamethod behavior or be a proxy-wrapped object.
+:::
 
 ## Retrieving a Service
 
