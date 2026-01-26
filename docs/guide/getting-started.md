@@ -10,28 +10,21 @@ The Nodeal Plugin is essential. It handles pre-parsing, dependency injection, an
 
 [**Download Nodeal Plugin**](https://create.roblox.com/store/asset/0000000000) *(Template Link)*
 
-### 2. Get the Framework Model
+### 2. Setup via Plugin
 
-The core framework is distributed as a Roblox Model.
-
-[**Get Nodeal Model**](https://create.roblox.com/store/asset/0000000000) *(Template Link)*
-
-## Setup
+Once the plugin is installed, setting up Nodeal is effortless:
 
 1.  **Open Roblox Studio** and load your place.
-2.  Open the **Toolbox** -> **My Models** and insert the **Nodeal Framework** model.
-3.  Move the `Nodeal` folder into **ReplicatedStorage**.
-4.  Create a `Script` in **ServerScriptService** to initialize the framework:
+2.  Navigate to the **Plugins** tab.
+3.  Locate the **Nodeal** toolbar.
+4.  Click the **"Install / Upgrade"** icon.
 
-```lua
-local Nodeal = require(game.ReplicatedStorage:WaitForChild("Nodeal"))
+The plugin will automatically:
+- Install the latest version of the framework.
+- Create the necessary initialization scripts.
+- Configure your environment for 100% Studio compatibility.
 
-Nodeal.start({
-    debug = true
-}):catch(warn)
-```
-
-5.  **Run the Game**. You should see Nodeal initialization logs in the output.
+You are now ready to start coding!
 
 ## Next Steps
 
