@@ -1,46 +1,39 @@
 # Getting Started
 
-Welcome to **Nodeal**. This guide will help you install and configure the framework for your Roblox project.
+Welcome to **Nodeal**. This framework is designed for a **100% Studio** workflow, meaning you don't need external tools like Rojo or Wally if you prefer staying in Roblox Studio.
 
 ## Installation
 
-Nodeal can be installed via [Wally](https://wally.run/), the package manager for Roblox.
+### 1. Install the Plugin
 
-### 1. Initialize Wally
+The Nodeal Plugin is essential. It handles pre-parsing, dependency injection, and optimizations.
 
-If you haven't already, run:
+[**Download Nodeal Plugin**](https://create.roblox.com/store/asset/0000000000) *(Template Link)*
 
-```bash
-wally init
-```
+### 2. Get the Framework Model
 
-### 2. Add Dependency
+The core framework is distributed as a Roblox Model.
 
-Add `Nodeal` to your `wally.toml`:
+[**Get Nodeal Model**](https://create.roblox.com/store/asset/0000000000) *(Template Link)*
 
-```toml
-[dependencies]
-Nodeal = "furymob-git/nodeal@0.1.0"
-```
+## Setup
 
-### 3. Install
-
-Run the install command:
-
-```bash
-wally install
-```
-
-## Quick Start
-
-Create a new script in `ServerScriptService` and initialize Nodeal:
+1.  **Open Roblox Studio** and load your place.
+2.  Open the **Toolbox** -> **My Models** and insert the **Nodeal Framework** model.
+3.  Move the `Nodeal` folder into **ReplicatedStorage**.
+4.  Create a `Script` in **ServerScriptService** to initialize the framework:
 
 ```lua
-local Nodeal = require(game.ReplicatedStorage.Packages.Nodeal)
+local Nodeal = require(game.ReplicatedStorage:WaitForChild("Nodeal"))
 
 Nodeal.start({
     debug = true
 }):catch(warn)
 ```
 
-You are now ready to build!
+5.  **Run the Game**. You should see Nodeal initialization logs in the output.
+
+## Next Steps
+
+Check out the [Studio Workflow](./studio-workflow.md) guide to understand how to use the plugin effectively.
+
