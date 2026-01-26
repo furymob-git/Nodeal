@@ -1,0 +1,30 @@
+{
+  "name": "nodeal",
+  "version": "1.0.0",
+  "description": "Nodeal is a seamless Roblox framework built to break engine limits.",
+  "main": "index.js",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/furymob-git/Nodeal.git"
+  },
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/furymob-git/Nodeal/issues"
+  },
+  "homepage": "https://github.com/furymob-git/Nodeal#readme",
+  "devDependencies": {
+    "vitepress": "^1.6.4",
+    "vue": "^3.5.27"
+  }
+}
