@@ -1,6 +1,8 @@
 # Built-ins
 
+::: info Extend the Engine
 Nodeal allows you to extend the Roblox Engine itself by injecting custom "Built-in" libraries or overriding existing ones.
+:::
 
 ## Registering a Built-in
 
@@ -23,6 +25,10 @@ Once registered, `MathEx` can be accessed as if it were a native part of the eng
 ### Overriding Standard Libraries
 
 You can also use this to monkey-patch or extend standard Roblox libraries safely within the Nodeal environment.
+
+::: warning Proceed with Caution
+Overriding standard libraries like `os` or `math` affects the **entire Nodeal environment**. Ensure your changes are intentional to avoid confusing other developers on your team.
+:::
 
 ```lua
 -- Example: Extending the 'os' library safely
