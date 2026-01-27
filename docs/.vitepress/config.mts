@@ -8,7 +8,7 @@ export default defineConfig({
   base: '/Nodeal/',
   head: [['link', { rel: 'icon', href: '/Nodeal/logo.png' }]],
   themeConfig: {
-    logo: '/logo.png', // VitePress handles base automatically for themeConfig, but let's be safe if needed or leave as is. Actually VitePress handles themeConfig.logo automatically with base. I will only change HEAD.
+    logo: '/logo.png',
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Guide', link: '/guide/getting-started' },
@@ -52,6 +52,7 @@ export default defineConfig({
     },
 
     socialLinks: [
+      { icon: 'discord', link: 'https://discord.gg/hxFJqGe9JE' },
       { icon: 'github', link: 'https://github.com/furymob-git/Nodeal' }
     ],
 
