@@ -4,10 +4,6 @@
 Welcome to **Nodeal**. This framework is designed for a **100% Studio** workflow, meaning you don't need external tools like Rojo or Wally if you prefer staying in Roblox Studio.
 :::
 
-::: warning Prerequisite
-Ensure **HTTP Requests** and **API Services** are enabled in your Game Settings for the plugin to function correctly.
-:::
-
 ## Installation
 
 ### 1. Install the Plugin
