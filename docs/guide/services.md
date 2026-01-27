@@ -6,25 +6,38 @@ Nodeal revolutionizes how you manage game logic by unifying Roblox's standard se
 
 You can register a new service anywhere in your codebase using `game:RegisterService`.
 
-```lua
--- Define the service structure first for cleaner code
+::: code-group
+
+```lua [Nodeal Service]
+-- Clean & Direct
 local NetworkService = {}
 
-local Network = {}
-Network.__index = Network
-Network.__type = "Network"
-
-function Network:Fire(...: any?): ()
-    ...
+function NetworkService:GetNetwork(network: string)
+    -- Your logic here
 end
 
-function NetworkService:GetNetwork(network: string): Network
-    ...
-end
-
--- Register the service
+-- Simply register it to the game
 game:RegisterService("NetworkService", NetworkService)
 ```
+
+```lua [Classic ModuleScript]
+-- The old, verbose way
+local NetworkService = {}
+NetworkService.__index = NetworkService
+
+function NetworkService.new()
+    local self = setmetatable({}, NetworkService)
+    return self
+end
+
+function NetworkService:GetNetwork(network: string)
+    -- Your logic here
+end
+
+return NetworkService
+```
+
+:::
 
 ::: tip Advanced Usage: Service Wrapping
 You can wrap existing Roblox services using `newproxy` and extend them directly.
