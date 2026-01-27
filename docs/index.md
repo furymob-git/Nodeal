@@ -26,4 +26,5 @@ features:
   - title: Security & Isolation
     icon: 🛡️
     details: Built-in sandboxing and context separation to protect critical game logic and prevent unauthorized access.
+
 ---
