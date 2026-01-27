@@ -64,7 +64,7 @@ export default defineConfig({
     ],
 
     footer: {
-      message: 'Released under the MIT License.',
+      message: 'Released under the Nodeal Public License.',
       copyright: 'Copyright © 2026 Nodeal Team'
     }
   }
