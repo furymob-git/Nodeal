@@ -31,7 +31,7 @@
 .vp-doc h1,
 .VPHero .name,
 .VPFeature .title {
-  background: linear-gradient(to right, #a855f7, #ec4899, #3b82f6);
+  background: linear-gradient(to right, #a855f7, #ec4899, #3b82f6, #a855f7);
   background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
@@ -60,7 +60,6 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Fix Mobile Menu Background & Interaction */
 /* Fix Mobile Menu Background & Interaction */
 .VPNavScreen {
   display: block !important;
