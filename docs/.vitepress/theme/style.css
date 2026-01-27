@@ -200,3 +200,17 @@ body {
     justify-content: center !important;
   }
 }
+
+/* =========================================
+   7. Code Block Overrides
+   ========================================= */
+/* Override 'lua' label to 'luau' */
+.vp-doc [class*="language-lua"]>span.lang {
+  font-size: 0 !important;
+}
+
+.vp-doc [class*="language-lua"]>span.lang::before {
+  content: 'luau';
+  font-size: 14px;
+  /* Restore visible font size */
+}
