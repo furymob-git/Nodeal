@@ -64,7 +64,7 @@ export default defineConfig({
     ],
 
     footer: {
-      message: 'Released under the Nodeal Public License.',
+      message: 'Released under the <a href="/Nodeal/license">Nodeal Public License</a>.',
       copyright: 'Copyright © 2026 Nodeal Team'
     }
   }
