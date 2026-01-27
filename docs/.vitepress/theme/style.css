@@ -145,7 +145,6 @@ body {
 }
 
 /* 7. Search Bar Customization */
-/* 7. Search Bar Customization */
 .VPNavBarSearch .DocSearch-Button,
 .VPLocalSearchBox .VPLocalSearchBoxButton {
   background-color: rgba(255, 255, 255, 0.05) !important;
@@ -153,6 +152,9 @@ body {
   border-radius: 8px !important;
   padding: 0 12px !important;
   width: 100% !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
   transition: all 0.3s ease;
 }
 
