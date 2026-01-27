@@ -61,19 +61,23 @@
 }
 
 /* Fix Mobile Menu Background & Interaction */
+/* Fix Mobile Menu Background & Interaction */
 .VPNavScreen {
+  display: block !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
   background-color: var(--vp-c-bg) !important;
-  /* Use theme bg to be safe */
-  backdrop-filter: none !important;
-  /* Remove blur to test visibility first */
-  z-index: 100 !important;
+  /* Theme dark background */
+  z-index: 9999 !important;
+  overflow-y: auto !important;
+  padding-top: var(--vp-nav-height) !important;
+  /* Dynamically use nav height */
   opacity: 1 !important;
   visibility: visible !important;
   transform: none !important;
-}
-
-.VPNavScreen.open {
-  display: block !important;
 }
 
 /* Ensure navbar stays on top but below menu content if needed */
