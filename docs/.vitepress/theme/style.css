@@ -1,5 +1,8 @@
+/* =========================================
+   1. Theme Variables & Global Overrides
+   ========================================= */
 :root {
-  /* Dynamic Neon Palette */
+  /* Brand Palette */
   --vp-c-brand-1: #a855f7;
   /* Purple */
   --vp-c-brand-2: #ec4899;
@@ -7,7 +10,7 @@
   --vp-c-brand-3: #3b82f6;
   /* Blue */
 
-  /* Background colors override */
+  /* Home Hero Text Gradient */
   --vp-home-hero-name-color: transparent;
   --vp-home-hero-name-background: linear-gradient(135deg, #a855f7 30%, #ec4899 60%, #3b82f6);
 }
@@ -18,8 +21,13 @@
   --vp-c-bg-alt: #0f111a;
 }
 
-/* 1. Global Background Atmosphere */
-/* Adds a subtle glowing mesh gradient behind the hero section */
+body {
+  letter-spacing: -0.015em;
+}
+
+/* =========================================
+   2. Background & Atmosphere
+   ========================================= */
 .VPContent {
   background-image:
     radial-gradient(circle at 50% 10%, rgba(168, 85, 247, 0.15) 0%, transparent 60%),
@@ -27,7 +35,7 @@
   background-attachment: fixed;
 }
 
-/* 2. Supercharged Hero Text */
+/* Gradient Text Animation */
 .vp-doc h1,
 .VPHero .name,
 .VPFeature .title {
@@ -45,50 +53,39 @@
   }
 }
 
-/* 3. Ultra-Premium Glassmorphism Navbar */
-
-/* Light Mode Navbar */
+/* =========================================
+   3. Navbar Styling (Glassmorphism)
+   ========================================= */
 .VPNav {
   backdrop-filter: blur(16px) saturate(180%);
   background-color: rgba(255, 255, 255, 0.7);
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  z-index: 50;
 }
 
-/* Dark Mode Navbar */
 .dark .VPNav {
   background-color: rgba(3, 4, 8, 0.6);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Fix Mobile Menu Background & Interaction */
+/* Fix Mobile Menu Z-Index & Background */
 .VPNavScreen {
-  display: block !important;
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100vw !important;
-  height: 100vh !important;
   background-color: var(--vp-c-bg) !important;
-  /* Theme dark background */
   z-index: 9999 !important;
-  overflow-y: auto !important;
   padding-top: var(--vp-nav-height) !important;
-  /* Dynamically use nav height */
-  opacity: 1 !important;
-  visibility: visible !important;
-  transform: none !important;
 }
 
-/* Ensure navbar stays on top but below menu content if needed */
-.VPNav {
-  z-index: 50;
+/* Remove Border from Sidebar Title Area */
+.VPNavBarTitle.has-sidebar .title {
+  border-bottom: none !important;
 }
 
-/* 4. Feature Cards - "Holographic" feel */
+/* =========================================
+   4. Feature Cards
+   ========================================= */
 .VPFeature {
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  /* More subtle border */
   backdrop-filter: blur(10px);
   border-radius: 16px;
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -98,7 +95,6 @@
   transform: translateY(-5px) scale(1.02);
   box-shadow: 0 20px 40px -10px rgba(168, 85, 247, 0.2);
   border-color: rgba(168, 85, 247, 0.5);
-  /* Glows purple on hover */
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%);
 }
 
@@ -109,7 +105,10 @@
   box-shadow: 0 0 15px rgba(168, 85, 247, 0.2);
 }
 
-/* 5. Buttons - Neon Glow */
+/* =========================================
+   5. Buttons
+   ========================================= */
+/* Brand Button */
 .VPButton.brand {
   background-image: linear-gradient(to right, #a855f7, #ec4899);
   border: none;
@@ -126,6 +125,7 @@
   background-image: linear-gradient(to right, #9333ea, #db2777);
 }
 
+/* Alt Button */
 .VPButton.alt {
   border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -136,34 +136,49 @@
 .VPButton.alt:hover {
   border-color: #3b82f6;
   color: #3b82f6;
-  box-shadow: 0 0 10px rgba(59, 130, 246, 0.2);
 }
 
-/* 6. Typography adjustments for "Tech" feel */
-body {
-  letter-spacing: -0.015em;
-}
-
-/* 7. Search Bar Customization */
+/* =========================================
+   6. Search Bar Customization
+   ========================================= */
+/* Base Styles */
 .VPNavBarSearch .DocSearch-Button,
 .VPLocalSearchBox .VPLocalSearchBoxButton {
-  background-color: rgba(255, 255, 255, 0.05) !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
   border-radius: 8px !important;
   padding: 0 12px !important;
-  width: 100% !important;
   display: flex !important;
   justify-content: space-between !important;
   align-items: center !important;
   transition: all 0.3s ease;
 }
 
+/* Light Mode Colors */
+.VPNavBarSearch .DocSearch-Button,
+.VPLocalSearchBox .VPLocalSearchBoxButton {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Dark Mode Colors */
+.dark .VPNavBarSearch .DocSearch-Button,
+.dark .VPLocalSearchBox .VPLocalSearchBoxButton {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Hide on Home Page & Custom Pages */
+.home-page .VPNavBarSearch,
+.hide-search .VPNavBarSearch {
+  display: none !important;
+}
+
+/* Desktop: Wide Search Bar */
 @media (min-width: 768px) {
 
   .VPNavBarSearch .DocSearch-Button,
   .VPLocalSearchBox .VPLocalSearchBoxButton {
     min-width: 350px !important;
-    /* Force it WIDE */
+    width: 100% !important;
   }
 
   .VPNavBarSearch {
@@ -171,7 +186,17 @@ body {
   }
 }
 
-/* 8. Hide Search on Home Page */
-.home-page .VPNavBarSearch {
-  display: none !important;
+/* Mobile: Icon Only (Transparent) */
+@media (max-width: 768px) {
+
+  .VPNavBarSearch .DocSearch-Button,
+  .VPLocalSearchBox .VPLocalSearchBoxButton,
+  .dark .VPNavBarSearch .DocSearch-Button,
+  .dark .VPLocalSearchBox .VPLocalSearchBoxButton {
+    background-color: transparent !important;
+    border: none !important;
+    padding: 0 8px !important;
+    width: auto !important;
+    justify-content: center !important;
+  }
 }

@@ -1,0 +1,21 @@
+---
+title: License
+pageClass: hide-search
+---
+
+# Nodeal Public License
+Copyright 2026 Nodeal by FURYMOB
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to use, copy, modify, merge, publish, and distribute copies of the Software, subject to the following conditions:
+
+1. **RESTRICTION ON SALE**: The Software, including any modifications, forks, or derivative works, MAY NOT be sold, rented, sublicensed, or otherwise distributed for a fee. The Software must remain available free of charge.
+
+2. **COMMERCIAL USAGE PERMITTED**: Users ARE permitted to use the Software to create games, applications, or external libraries/plugins that are sold or monetized, provided that the user is not selling the Software itself.
+   - Example A (Allowed): Creating a paid Roblox game using Nodeal.
+   - Example B (Allowed): Creating a paid addon library that requires Nodeal to run.
+   - Example C (Forbidden): Downloading Nodeal, renaming it, and selling it on the marketplace.
+   - Example D (Forbidden): Modifying the Nodeal source code (e.g. adding features, changing the UI, fixing bugs) and selling this modified version. Even heavily modified versions must remain free.
+
+3. **ATTRIBUTION**: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. Please credit "Nodeal" by FURYMOB when using or sharing this software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
