@@ -167,6 +167,6 @@ body {
   }
 
   .VPNavBarSearch {
-    padding-left: 32px !important;
+    padding-left: 0 !important;
   }
 }
