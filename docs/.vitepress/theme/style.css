@@ -170,3 +170,8 @@ body {
     padding-left: 0 !important;
   }
 }
+
+/* 8. Hide Search on Home Page */
+.home-page .VPNavBarSearch {
+  display: none !important;
+}
