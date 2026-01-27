@@ -6,9 +6,16 @@ export default defineConfig({
   cleanUrls: false,
   appearance: 'dark',
   base: '/Nodeal/',
+  lastUpdated: true,
+  markdown: {
+    lineNumbers: true
+  },
   head: [['link', { rel: 'icon', href: '/Nodeal/logo.png' }]],
   themeConfig: {
     logo: '/logo.png',
+    search: {
+      provider: 'local'
+    },
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Guide', link: '/guide/getting-started' },
