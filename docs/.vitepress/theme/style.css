@@ -145,6 +145,7 @@ body {
 }
 
 /* 7. Search Bar Customization */
+/* 7. Search Bar Customization */
 .VPNavBarSearch .DocSearch-Button,
 .VPLocalSearchBox .VPLocalSearchBoxButton {
   background-color: rgba(255, 255, 255, 0.05) !important;
@@ -152,21 +153,18 @@ body {
   border-radius: 8px !important;
   padding: 0 12px !important;
   width: 100% !important;
-  min-width: 200px !important;
   transition: all 0.3s ease;
 }
 
-.VPNavBarSearch .DocSearch-Button:hover,
-.VPLocalSearchBox .VPLocalSearchBoxButton:hover {
-  background-color: rgba(255, 255, 255, 0.1) !important;
-  border-color: rgba(168, 85, 247, 0.5) !important;
-  box-shadow: 0 0 10px rgba(168, 85, 247, 0.2);
-}
-
 @media (min-width: 768px) {
+
+  .VPNavBarSearch .DocSearch-Button,
+  .VPLocalSearchBox .VPLocalSearchBoxButton {
+    min-width: 350px !important;
+    /* Force it WIDE */
+  }
+
   .VPNavBarSearch {
-    flex-grow: 1 !important;
-    padding-left: 24px !important;
-    max-width: 400px !important;
+    padding-left: 32px !important;
   }
 }
