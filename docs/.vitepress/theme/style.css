@@ -62,8 +62,23 @@
 
 /* Fix Mobile Menu Background & Interaction */
 .VPNavScreen {
-  background-color: rgba(3, 4, 8, 0.95) !important;
-  backdrop-filter: blur(20px);
+  background-color: var(--vp-c-bg) !important;
+  /* Use theme bg to be safe */
+  backdrop-filter: none !important;
+  /* Remove blur to test visibility first */
+  z-index: 100 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
+
+.VPNavScreen.open {
+  display: block !important;
+}
+
+/* Ensure navbar stays on top but below menu content if needed */
+.VPNav {
+  z-index: 50;
 }
 
 /* 4. Feature Cards - "Holographic" feel */
