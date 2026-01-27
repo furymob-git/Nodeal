@@ -143,3 +143,16 @@
 body {
   letter-spacing: -0.015em;
 }
+
+/* 7. Code Font with Ligatures */
+:root {
+  --vp-font-family-mono: 'Fira Code', 'JetBrains Mono', 'Cascadia Code', 'Source Code Pro', monospace;
+}
+
+code,
+kbd,
+samp,
+pre {
+  font-family: var(--vp-font-family-mono) !important;
+  font-variant-ligatures: normal;
+}
