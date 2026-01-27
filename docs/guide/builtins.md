@@ -31,16 +31,21 @@ Overriding standard libraries like `os` or `math` affects the **entire Nodeal en
 :::
 
 ```lua
--- Example: Extending the 'os' library safely
-game:RegisterBuiltIn("os", {
-    clock = os.clock, -- Keep original
-    time = os.time,   -- Keep original
-    
-    -- Add custom function
-    isSummer = function()
-        return os.date("*t").month >= 6 and os.date("*t").month <= 8
-    end
-})
+-- Define the new structure locally
+local OSLib = {}
+
+-- Copy existing logic or proxy it
+OSLib.clock = os.clock
+OSLib.time = os.time
+
+-- Add custom functionality
+function OSLib.isSummer()
+    local month = os.date("*t").month
+    return month >= 6 and month <= 8
+end
+
+-- Register it as the new 'os' built-in
+game:RegisterBuiltIn("os", OSLib)
 ```
 
 ### Advanced: Wrapping Built-ins with Proxy
