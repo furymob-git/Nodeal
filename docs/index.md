@@ -24,7 +24,6 @@ features:
     icon: 🛠️
     details: Bypass standard engine restrictions to access hidden properties and services for advanced development workflows.
   - title: Security & Isolation
-    icon: 🛡️
+    icon: "&#128274;"
     details: Built-in sandboxing and context separation to protect critical game logic and prevent unauthorized access.
-
 ---
