@@ -6,12 +6,7 @@ export default defineConfig({
   cleanUrls: false,
   appearance: 'dark',
   base: '/Nodeal/',
-  head: [
-    ['link', { rel: 'icon', href: '/Nodeal/logo.png' }],
-    ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
-    ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
-    ['link', { href: 'https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=JetBrains+Mono:wght@100..800&display=swap', rel: 'stylesheet' }]
-  ],
+  head: [['link', { rel: 'icon', href: '/Nodeal/logo.png' }]],
   themeConfig: {
     logo: '/logo.png',
     nav: [

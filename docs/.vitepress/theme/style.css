@@ -143,29 +143,3 @@
 body {
   letter-spacing: -0.015em;
 }
-
-/* 7. Code Font with Ligatures */
-:root {
-  --vp-font-family-mono: 'Fira Code', 'JetBrains Mono', 'Cascadia Code', 'Source Code Pro', monospace;
-}
-
-/* Target VitePress specific code blocks more aggressively */
-:root {
-  --vp-font-family-mono: 'Fira Code', 'JetBrains Mono', monospace !important;
-}
-
-code,
-kbd,
-samp,
-pre,
-.vp-code,
-.vp-doc code {
-  font-family: 'Fira Code', 'JetBrains Mono', monospace !important;
-  font-variant-ligatures: normal !important;
-}
-
-/* Specifically for strict blocks created by Shiki */
-div[class*='language-'] pre,
-div[class*='language-'] code {
-  font-family: 'Fira Code', 'JetBrains Mono', monospace !important;
-}
