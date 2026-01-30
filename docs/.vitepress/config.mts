@@ -12,7 +12,7 @@ export default defineConfig({
   },
   head: [['link', { rel: 'icon', href: '/Nodeal/logo.png' }]],
   themeConfig: {
-    logo: '/Nodeal/logo.png',
+    logo: '/logo.png',
     search: {
       provider: 'local'
     },
