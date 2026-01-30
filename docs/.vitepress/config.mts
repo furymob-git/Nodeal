@@ -10,9 +10,9 @@ export default defineConfig({
   markdown: {
     lineNumbers: true
   },
-  head: [['link', { rel: 'icon', href: '/Nodeal/logo.png' }]],
+  head: [['link', { rel: 'icon', href: '/Nodeal/icon.png' }]],
   themeConfig: {
-    logo: '/logo.png',
+    logo: '/Nodeal/icon.png',
     search: {
       provider: 'local'
     },
