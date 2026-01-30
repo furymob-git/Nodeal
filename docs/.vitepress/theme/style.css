@@ -224,3 +224,18 @@ body {
   font-size: 14px;
   /* Restore visible font size */
 }
+
+/* =========================================
+   8. Fixes
+   ========================================= */
+
+/* Force hide aside-curtain on desktop */
+@media (min-width: 960px) {
+  .VPBackdrop {
+    display: none !important;
+  }
+
+  .aside-curtain {
+    display: none !important;
+  }
+}
