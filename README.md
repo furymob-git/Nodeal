@@ -18,9 +18,9 @@
   <br />
   <a href="https://discord.gg/hTqXPRduHp">Join Discord</a>
   ·
-  <a href="https://github.com/furymob-git/Nodeal/issues/new?labels=bug">Report Bug</a>
+  <a href="https://github.com/furymob-git/Nodeal/issues/new?template=bug_report.md">Report Bug</a>
   ·
-  <a href="https://github.com/furymob-git/Nodeal/issues/new?labels=enhancement">Request Feature</a>
+  <a href="https://github.com/furymob-git/Nodeal/issues/new?template=feature_request.md">Request Feature</a>
 </div>
 
 ---
