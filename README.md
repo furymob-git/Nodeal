@@ -3,24 +3,24 @@
   <p>
     <!-- Community -->
     <a href="https://discord.gg/hTqXPRduHp">
-      <img src="https://img.shields.io/discord/1464018264861577311?color=5865F2&label=Discord&logo=discord&logoColor=white&style=flat-square" alt="Discord" />
+      <img src="https://img.shields.io/discord/1464018264861577311?color=5865F2&label=Discord&logo=discord&logoColor=white" alt="Discord" />
     </a>
     <a href="https://ko-fi.com/furymob">
-      <img src="https://img.shields.io/badge/Ko--fi-Support%20Me-FF5E5B?style=flat-square&logo=ko-fi&logoColor=white" alt="Ko-fi" />
+      <img src="https://img.shields.io/badge/Ko--fi-Support%20Me-FF5E5B?logo=ko-fi&logoColor=white" alt="Ko-fi" />
     </a>
     <br />
     <a href="https://github.com/furymob-git/Nodeal/issues">
-      <img src="https://img.shields.io/github/issues/furymob-git/Nodeal?style=flat-square&logo=github&label=Issues" alt="Issues" />
+      <img src="https://img.shields.io/github/issues/furymob-git/Nodeal?logo=github&label=Issues" alt="Issues" />
     </a>
     <a href="https://github.com/furymob-git/Nodeal/commits/main">
-      <img src="https://img.shields.io/github/last-commit/furymob-git/Nodeal?style=flat-square&logo=github&label=Last%20Update" alt="Last Commit" />
+      <img src="https://img.shields.io/github/last-commit/furymob-git/Nodeal?logo=github&label=Last%20Update" alt="Last Commit" />
     </a>
     <br />
     <a href="https://github.com/furymob-git/Nodeal/blob/main/LICENSE">
-      <img src="https://img.shields.io/badge/License-NPL-blue?style=flat-square" alt="License" />
+      <img src="https://img.shields.io/badge/License-NPL-blue" alt="License" />
     </a>
     <a href="https://github.com/furymob-git/Nodeal/stargazers">
-      <img src="https://img.shields.io/github/stars/furymob-git/Nodeal?style=flat-square&logo=github&label=Stars" alt="Stars" />
+      <img src="https://img.shields.io/github/stars/furymob-git/Nodeal?logo=github&label=Stars" alt="Stars" />
     </a>
   </p>
 
