@@ -12,6 +12,9 @@ hero:
     - theme: alt
       text: View on GitHub
       link: https://github.com/furymob-git/Nodeal
+    - theme: alt
+      text: Support on Ko-fi
+      link: https://ko-fi.com/furymob
 
 features:
   - title: Modular Architecture

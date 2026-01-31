@@ -1,10 +1,16 @@
 import DefaultTheme from 'vitepress/theme'
-import { watch } from 'vue'
+import { watch, h } from 'vue'
 import { useRoute } from 'vitepress'
 import './style.css'
+import KofiWidget from './components/KofiWidget.vue'
 
 export default {
     extends: DefaultTheme,
+    Layout: () => {
+        return h(DefaultTheme.Layout, null, {
+            'layout-bottom': () => h(KofiWidget)
+        })
+    },
     setup() {
         const route = useRoute()
         watch(
