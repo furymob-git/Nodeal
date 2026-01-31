@@ -14,9 +14,6 @@ hero:
       link: https://github.com/furymob-git/Nodeal
 
 features:
-  - title: High-Performance Runtime
-    icon: 🚀
-    details: Designed for speed with minimal overhead. Nodeal executes logic efficiently without unnecessary abstraction layers.
   - title: Modular Architecture
     icon: 📦
     details: A decentralized structure allowing you to import and utilize only the specific components your project requires.
@@ -26,4 +23,6 @@ features:
   - title: Security & Isolation
     icon: "&#128274;"
     details: Built-in sandboxing and context separation to protect critical game logic and prevent unauthorized access.
----
+  - title: Studio First Workflow
+    icon: 🎨
+    details: Designed for a 100% Roblox Studio workflow. No external tools required, just pure efficiency.

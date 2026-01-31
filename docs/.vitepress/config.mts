@@ -17,12 +17,12 @@ export default defineConfig({
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:locale', content: 'en_US' }],
     ['meta', { property: 'og:site_name', content: 'Nodeal' }],
-    ['meta', { property: 'og:title', content: 'Nodeal | Break Roblox Engine Limits' }],
-    ['meta', { property: 'og:description', content: 'Experience a new standard in Roblox development. Nodeal provides a seamless, powerful toolset including decorators, advanced proxies, and modular services to help you build without boundaries.' }],
+    ['meta', { property: 'og:title', content: 'Nodeal | The Advanced Framework to Break Roblox Engine Limits' }],
+    ['meta', { property: 'og:description', content: 'Unlock the full potential of Roblox with decorators, custom proxies, and modular services. Build advanced games seamlessly without engine limitations.' }],
     ['meta', { property: 'og:image', content: 'https://furymob-git.github.io/Nodeal/logo.png' }],
     ['meta', { property: 'og:url', content: 'https://furymob-git.github.io/Nodeal/' }],
 
-    // Key for smaller thumbnail on Discord
+    // Forces small thumbnail on right side
     ['meta', { name: 'twitter:card', content: 'summary' }],
 
     // Theme
