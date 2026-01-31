@@ -10,7 +10,24 @@ export default defineConfig({
   markdown: {
     lineNumbers: true
   },
-  head: [['link', { rel: 'icon', href: '/Nodeal/logo.png' }]],
+  head: [
+    ['link', { rel: 'icon', href: '/Nodeal/logo.png' }],
+
+    // Open Graph / Facebook / Discord
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:locale', content: 'en_US' }],
+    ['meta', { property: 'og:site_name', content: 'Nodeal' }],
+    ['meta', { property: 'og:title', content: 'Nodeal | Break Roblox Engine Limits' }],
+    ['meta', { property: 'og:description', content: 'Experience a new standard in Roblox development. Nodeal provides a seamless, powerful toolset including decorators, advanced proxies, and modular services to help you build without boundaries.' }],
+    ['meta', { property: 'og:image', content: 'https://furymob-git.github.io/Nodeal/logo.png' }],
+    ['meta', { property: 'og:url', content: 'https://furymob-git.github.io/Nodeal/' }],
+
+    // Key for large preview on Discord (even without other twitter tags)
+    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+
+    // Theme
+    ['meta', { name: 'theme-color', content: '#825ecaff' }]
+  ],
   themeConfig: {
     logo: '/logo.png',
     search: {
