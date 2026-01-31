@@ -22,11 +22,11 @@ export default defineConfig({
     ['meta', { property: 'og:image', content: 'https://furymob-git.github.io/Nodeal/logo.png' }],
     ['meta', { property: 'og:url', content: 'https://furymob-git.github.io/Nodeal/' }],
 
-    // Key for large preview on Discord (even without other twitter tags)
-    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+    // Key for smaller thumbnail on Discord
+    ['meta', { name: 'twitter:card', content: 'summary' }],
 
     // Theme
-    ['meta', { name: 'theme-color', content: '#825ecaff' }]
+    ['meta', { name: 'theme-color', content: '#e83cfc' }]
   ],
   themeConfig: {
     logo: '/logo.png',
