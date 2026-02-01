@@ -18,7 +18,8 @@
 .dark {
   --vp-c-bg: #030408;
   /* Deep dark background */
-  --vp-c-bg-alt: #0f111a;
+  --vp-c-bg-alt: #161925;
+  --vp-code-block-divider-color: rgba(255, 255, 255, 0.1);
 }
 
 body {
@@ -404,6 +405,7 @@ body {
   mask-size: contain;
 }
 
+
 .support-glow {
   position: absolute;
   top: 50%;
@@ -415,4 +417,48 @@ body {
   filter: blur(60px);
   z-index: 1;
   pointer-events: none;
+}
+
+/* =========================================
+   11. Markdown Tables in Dark Mode
+   ========================================= */
+.vp-doc table {
+  display: table;
+  width: 100%;
+  border-collapse: separate;
+  /* Needed for border-radius */
+  border-spacing: 0;
+  margin: 20px 0;
+  overflow-x: auto;
+  border-radius: 7px;
+  /* Rounded corners */
+  overflow: hidden;
+  /* Clips content to corners */
+  border: 1px solid rgba(78, 78, 78, 0.1);
+  /* Outer frame */
+}
+
+.vp-doc th,
+.vp-doc td {
+  border: none !important;
+  border-bottom: 1px solid rgba(78, 78, 78, 0.1) !important;
+  border-right: 1px solid rgba(78, 78, 78, 0.1) !important;
+  padding: 12px 16px;
+  background-color: var(--vp-c-bg-alt);
+}
+
+/* Remove side borders on last column to fit rounded frame */
+.vp-doc th:last-child,
+.vp-doc td:last-child {
+  border-right: none !important;
+}
+
+/* Remove bottom borders on last row to fit rounded frame */
+.vp-doc tr:last-child td {
+  border-bottom: none !important;
+}
+
+.vp-doc th {
+  font-weight: 600;
+  color: var(--vp-c-text-1);
 }

@@ -1,4 +1,26 @@
 import { defineConfig } from 'vitepress'
+import { readdirSync } from 'node:fs'
+import { join, dirname } from 'node:path'
+import { fileURLToPath } from 'node:url'
+
+const __dirname = dirname(fileURLToPath(import.meta.url))
+
+// Auto-discover modules in /api/modules/
+function getModulesSidebarItems() {
+  const modulesDir = join(__dirname, '../api/modules')
+  try {
+    const files = readdirSync(modulesDir)
+      .filter((file: string) => file.endsWith('.md'))
+      .map((file: string) => ({
+        text: file.replace('.md', '').replace(/-/g, ' ').replace(/\b\w/g, (l: string) => l.toUpperCase()),
+        link: `/api/modules/${file.replace('.md', '')}`
+      }))
+      .sort((a: any, b: any) => a.text.localeCompare(b.text))
+    return files
+  } catch {
+    return []
+  }
+}
 
 export default defineConfig({
   title: "Nodeal",
@@ -35,7 +57,7 @@ export default defineConfig({
     },
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Docs', link: '/guide/getting-started' },
+      { text: 'Guide', link: '/guide/getting-started' },
       { text: 'API', link: '/api/game' }
     ],
 
@@ -45,32 +67,31 @@ export default defineConfig({
           text: 'Introduction',
           items: [
             { text: 'Getting Started', link: '/guide/getting-started' },
-            { text: 'Studio Workflow', link: '/guide/studio-workflow' }
+            { text: 'Studio Integration', link: '/guide/studio-integration' },
+            { text: 'Core Concepts', link: '/guide/core-concepts' }
           ]
         },
         {
-          text: 'Core Concepts',
+          text: 'Custom Components',
           items: [
-            { text: 'Services', link: '/guide/services' },
-            { text: 'Built-ins', link: '/guide/builtins' },
-            { text: 'Proxies & Metamethods', link: '/guide/proxies' },
-            { text: 'Decorators', link: '/guide/decorators' }
+            { text: 'Creating Modules', link: '/guide/module-system/modules' },
+            { text: 'Services', link: '/guide/module-system/services' },
+            { text: 'Built-ins', link: '/guide/module-system/builtins' },
+            { text: 'Decorators', link: '/guide/module-system/decorators' }
           ]
         }
       ],
       '/api/': [
         {
-          text: 'Global Extensions',
+          text: 'Nodeal Extensions',
           items: [
             { text: 'game Extension', link: '/api/game' },
             { text: 'Global Functions', link: '/api/globals' }
           ]
         },
         {
-          text: 'Metamethods',
-          items: [
-            { text: 'Custom Metamethods', link: '/api/metamethods' }
-          ]
+          text: 'Extra Modules',
+          items: getModulesSidebarItems()
         }
       ]
     },

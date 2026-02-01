@@ -9,14 +9,14 @@ Decorators are written inside a block comment `--[=[ ... ]=]` placed directly ab
 If no value is provided after a tag, it defaults to `true`.
 
 ```lua
-local module = {}
+local __=_G() local module = {}
 
 --[=[
     This function performs a heavy task asynchronously.
 
     @async
     @server
-    @deprecated Use NewFunction instead
+        @deprecated
     @example
         local result = module.DoWork(10)
         print(result)
@@ -25,25 +25,33 @@ function module.DoWork(value: number)
     task.wait(1)
     return value * 2
 end
+
+return setfenv(function() return __(module) end, {script = script()})
 ```
 
 ## Available Decorators
 
 ### Execution Context
-- **`@client`**: Marks the function as Client-side only. 
-- **`@server`**: Marks the function as Server-side only.
+- **`@client`**: Defines client-side behavior. If used as a parent tag (followed by indented tags), the nested tags will **only apply** in the Client context.
+- **`@server`**: Defines server-side behavior. If used as a parent tag, the nested tags will **only apply** in the Server context.
+
+> **Note**: These tags are powerful for defining context-specific deprecations or visibility rules (e.g., hiding a function from the client API but keeping it visible on the server).
 
 ### Visibility & Documentation
 - **`@hidden`**: Hides the function from auto-generated API listings or autocomplete suggestions.
-- **`@deprecated [message]`**: Marks the function as deprecated. You can optionally provide a message.
-- **`@example`**: Allows you to write code examples that might be surfaced in documentation tools.
+- **`@deprecated`**: Marks the function as deprecated.
+- **`@example`**: Allows you to write code examples that will be displayed in documentation tools.
 
 ### Behavior
 - **`@async`**: Indicates that the function returns a Promise or yields, helping with static analysis and usage hints.
 
 ## Nested Indentation
 
-You can nest tags for readability, although they are parsed flatly.
+Indentation is **semantic** in Nodeal decorators. Indented tags are treated as children of the tag above them. This is primarily used for **Context Scoping**.
+
+In the example below:
+*   The function is hidden **only** on the Client side.
+*   The function is deprecated **only** on the Server side.
 
 ```lua
 --[=[
@@ -53,6 +61,6 @@ You can nest tags for readability, although they are parsed flatly.
         @deprecated
 ]=]
 function module.ComplexBehavior()
-    -- ...
+    ...
 end
 ```
