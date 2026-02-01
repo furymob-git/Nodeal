@@ -1,47 +1,124 @@
 # Global Functions
 
-Nodeal overrides or adds several global functions to support its advanced type and proxy systems.
+Nodeal extends the global environment with new functions and enhances existing ones to support advanced features like proxies, custom types, and seamless module resolution.
 
-## Functions
+## `import`
 
-### `newproxy`
+The primary method for loading modules in Nodeal. Unlike `require`, `import` uses the framework's intelligent module resolution system.
 
-Creates a specialized userdata proxy. In Nodeal, this is enhanced to support wrapping objects and reciprocal unpacking.
-
-**Signature:**
+**Signature**
 ```lua
-newproxy(addMetatable: boolean | any) -> Userdata
+import(moduleName: string): any
 ```
 
-- **addMetatable**: If `true`, creates a blank proxy with a metatable. If an object is passed, it may create a proxy wrapping that object.
+**Parameters**
 
----
+| Name | Type | Description |
+| :--- | :--- | :--- |
+| `moduleName` | `string` | The name of the module to load. |
 
-### `unpack`
+**Returns**
 
-Unpacks a list or a proxy.
+*   `any`: The module's exported value.
 
-**Signature:**
+**Example**
+
 ```lua
-unpack(target: table | Userdata, ...) -> ...
+local MyModule = import("MyModule")
+print(MyModule.DoSomething())
 ```
 
-- **target**: The table to unpack, or a Nodeal proxy.
-- **Behavior**:
-    - If `target` is a standard table: Behaves like standard `table.unpack`.
-    - If `target` is a Nodeal proxy: 
-        - If the proxy has an `__unpack` metamethod, calls it.
-        - If the proxy was created by wrapping an object, returns the wrapped object.
+## `newproxy`
 
----
+Extended to support wrapping existing objects with custom metatables. This is essential for creating proxies around Roblox instances.
 
-### `typeof`
-
-Returns the type of the object, respecting custom metamethods.
-
-**Signature:**
+**Signature**
 ```lua
-typeof(object: any) -> string
+newproxy(target: boolean | any): Userdata
 ```
 
-- **Behavior**: Checks for the `__type` field in the object's metatable. If present, returns that string. Otherwise, performs standard Luau type checking.
+**Parameters**
+
+| Name | Type | Description |
+| :--- | :--- | :--- |
+| `target` | `boolean \| any` | If `true`, creates a blank proxy with a metatable. If an object, wraps the object in a proxy. |
+
+**Returns**
+
+*   `Userdata`: A new proxy object with optional metatable support.
+
+**Example**
+
+```lua
+-- Create blank proxy
+local proxy = newproxy(true)
+getmetatable(proxy).__index = { customProperty = "value" }
+
+-- Wrap existing object
+local Players = game:GetService("Players")
+local wrappedPlayers = newproxy(Players)
+```
+
+## `typeof`
+
+Modified to respect custom `__type` metamethods, allowing objects to define their own type identifiers.
+
+**Signature**
+```lua
+typeof(value: any): string
+```
+
+**Parameters**
+
+| Name | Type | Description |
+| :--- | :--- | :--- |
+| `value` | `any` | The value to check the type of. |
+
+**Returns**
+
+*   `string`: The type name. Returns `mt.__type` if present, otherwise falls back to Luau's `typeof`.
+
+**Example**
+
+```lua
+local proxy = newproxy(true)
+getmetatable(proxy).__type = "CustomService"
+
+print(typeof(proxy)) -- Output: "CustomService"
+print(typeof("hello")) -- Output: "string"
+```
+
+## `unpack`
+
+Enhanced to support unpacking Nodeal proxies and objects with custom `__unpack` metamethods.
+
+**Signature**
+```lua
+unpack(target: table | Userdata, start: number?, finish: number?): ...any
+```
+
+**Parameters**
+
+| Name | Type | Description |
+| :--- | :--- | :--- |
+| `target` | `table \| Userdata` | The table or proxy to unpack. |
+| `start` | `number?` | Optional starting index. |
+| `finish` | `number?` | Optional ending index. |
+
+**Returns**
+
+*   `...any`: Unpacked values from the target.
+
+**Example**
+
+```lua
+local data = {1, 2, 3, 4, 5}
+print(unpack(data, 2, 4)) -- Output: 2  3  4
+
+-- Custom proxy unpacking
+local proxy = newproxy(true)
+getmetatable(proxy).__unpack = function()
+    return "a", "b", "c"
+end
+print(unpack(proxy)) -- Output: a  b  c
+```

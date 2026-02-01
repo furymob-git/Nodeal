@@ -30,7 +30,7 @@
 Nodeal is managed entirely through a Roblox Studio Plugin.
 
 1.  Install the **Nodeal Plugin** from the Creator Store:
-    > [**Download Plugin (Coming Soon)**](#)
+    > [**Download Nodeal Plugin (Coming Soon)**](#)
 2.  Open **Roblox Studio**.
 3.  Open the **Plugins** tab and click **Install Nodeal**.
 4.  The framework will set up the necessary scripts and environment automatically.
