@@ -12,9 +12,6 @@ hero:
     - theme: alt
       text: View on GitHub
       link: https://github.com/furymob-git/Nodeal
-    - theme: alt
-      text: Support on Ko-fi
-      link: https://ko-fi.com/furymob
 
 features:
   - title: Modular Architecture
@@ -29,3 +26,15 @@ features:
   - title: Studio First Workflow
     icon: 🎨
     details: Designed for a 100% Roblox Studio workflow. No external tools required, just pure efficiency.
+---
+
+<div class="home-support-section">
+  <div class="support-glow"></div>
+  <div class="support-content">
+    <h2>Powered by You</h2>
+    <p>Nodeal is 100% free and open-source. Your support helps us break engine limits and maintain this project.</p>
+    <a href="https://ko-fi.com/furymob" target="_blank" class="home-support-btn">
+      Become a Supporter
+    </a>
+  </div>
+</div>
