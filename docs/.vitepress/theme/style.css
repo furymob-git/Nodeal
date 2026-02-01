@@ -127,6 +127,22 @@ body {
   border-radius: 24px;
   box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
   transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* Brand Button Icon (Lightning) */
+.VPButton.brand::before {
+  content: '';
+  width: 18px;
+  height: 18px;
+  background-color: white;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M13 2L3 14h9l-1 8 10-12h-9l1-8z'/%3E%3C/svg%3E") no-repeat center center;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M13 2L3 14h9l-1 8 10-12h-9l1-8z'/%3E%3C/svg%3E") no-repeat center center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
 }
 
 .VPButton.brand:hover {
@@ -238,4 +254,165 @@ body {
   .aside-curtain {
     display: none !important;
   }
+}
+
+/* =========================================
+   9. Ko-fi Button Styling
+   ========================================= */
+.VPHero .actions .VPButton[href*="ko-fi.com"] {
+  background: linear-gradient(135deg, #FF5E5B, #FF8A88) !important;
+  color: white !important;
+  border: none !important;
+  box-shadow: 0 4px 15px rgba(255, 94, 91, 0.4);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 700 !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+}
+
+/* Add Ko-fi Icon (SVG) */
+.VPHero .actions .VPButton[href*="ko-fi.com"]::before {
+  content: '';
+  width: 24px;
+  height: 24px;
+  margin-right: 4px;
+  background-color: white;
+  -webkit-mask: url("/Nodeal/ko-fi.svg") no-repeat center center;
+  mask: url("/Nodeal/ko-fi.svg") no-repeat center center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+/* Hover State */
+.VPHero .actions .VPButton[href*="ko-fi.com"]:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(255, 94, 91, 0.6);
+  background: linear-gradient(135deg, #FF8A88, #FF5E5B) !important;
+}
+
+/* Shine Animation Effect */
+.VPHero .actions .VPButton[href*="ko-fi.com"]::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.3) 50%,
+      rgba(255, 255, 255, 0) 100%);
+  transform: skewX(-25deg);
+  transition: none;
+}
+
+.VPHero .actions .VPButton[href*="ko-fi.com"]:hover::after {
+  animation: button-shine 0.75s ease-in-out;
+}
+
+@keyframes button-shine {
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 200%;
+  }
+}
+
+/* =========================================
+   10. Home Support Section
+   ========================================= */
+.home-support-section {
+  position: relative;
+  margin-top: 6rem;
+  margin-bottom: 4rem;
+  padding: 4rem 2rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.support-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+}
+
+.support-content h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #ffffff, #b3b3b3);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border: none;
+}
+
+.support-content p {
+  font-size: 1.1rem;
+  color: var(--vp-c-text-2);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* Increased specificity to override default markdown link styles */
+.home-support-section .home-support-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 32px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white !important;
+  background: linear-gradient(135deg, #FF5E5B, #ec4899);
+  border-radius: 50px;
+  text-decoration: none !important;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  box-shadow: 0 4px 20px rgba(255, 94, 91, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+
+.home-support-section .home-support-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(236, 72, 153, 0.5);
+  background: linear-gradient(135deg, #ec4899, #FF5E5B);
+}
+
+.home-support-section .home-support-btn::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  background-color: white;
+  -webkit-mask: url("/Nodeal/ko-fi.svg") no-repeat center center;
+  mask: url("/Nodeal/ko-fi.svg") no-repeat center center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+.support-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 60%;
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.15) 0%, transparent 70%);
+  filter: blur(60px);
+  z-index: 1;
+  pointer-events: none;
 }
