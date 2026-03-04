@@ -32,7 +32,7 @@ end
 ]=] 
 game:RegisterService("ExempleService", ExempleService)
 
-return setfenv(function() return __(ExempleService) end, {script = script()})
+return __(ExempleService)
 ```
 
 ::: tip Advanced Usage: Service Wrapping
@@ -50,7 +50,7 @@ end
 -- Register it back, effectively overriding 'TweenService' in your Nodeal environment
 game:RegisterService("TweenService", BetterTweenService)
 
-return setfenv(function() return __(BetterTweenService) end, {script = script()})
+return __(BetterTweenService)
 ```
 :::
 

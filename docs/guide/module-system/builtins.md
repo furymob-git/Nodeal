@@ -28,7 +28,7 @@ end
 ]=]
 game:RegisterBuiltIn("MathEx", MathEx)
 
-return setfenv(function() return __(MathEx) end, {script = script()})
+return __(MathEx)
 ```
 
 Once registered, you can use `MathEx` anywhere:
@@ -61,7 +61,7 @@ end
 -- Register as "os", replacing the standard library in Nodeal
 game:RegisterBuiltIn("os", BetterOS)
 
-return setfenv(function() return __(BetterOS) end, {script = script()})
+return __(BetterOS)
 ```
 
 ::: warning Scope Impact

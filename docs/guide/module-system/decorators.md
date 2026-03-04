@@ -26,7 +26,7 @@ function module.DoWork(value: number)
     return value * 2
 end
 
-return setfenv(function() return __(module) end, {script = script()})
+return __(module)
 ```
 
 ## Available Decorators

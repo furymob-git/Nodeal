@@ -7,21 +7,18 @@ Modules are the fundamental architectural unit in Nodeal. Unlike standard Roblox
 Nodeal leverages a specific boilerplate pattern to integrate with the virtualization engine. This structure ensures that the module interacts correctly with the custom global environment.
 
 ```lua
-local __=_G() local MyModule = {}
+local __=_G() local template = {}
 
---[=[
-    Description of the Init responsibility.
-]=]
-function MyModule.Init()
-    print("Module Initialized")
+function template.Init()
+    print("Template Initialized")
 end
 
-return setfenv(function() return __(MyModule) end, {script = script()})
+return __(template)
 ```
 
 ::: warning Security Boilerplate
 The `local __=_G()` header loads the internal security accessor.
-The `return setfenv(...)` statement wraps the return value, using `__` to verify that the requester has permission to access this module's content. This prevents unauthorized scripts from "sneaking" into the virtualized scope.
+The `__` is used for security verification to ensure that the requester has permission to access this module's content. This prevents unauthorized scripts from "sneaking" into the virtualized scope.
 **The Nodeal Plugin generates this automatically.**
 :::
 
@@ -43,19 +40,17 @@ The framework enforces a distinct creation workflow to maintain project integrit
 
 ### Extending the Framework
 
-::: warning Experimental Feature
-This API is currently a **Proof of Concept**. The interface for custom decorator handlers is subject to change.
-:::
-
 Nodeal is self-hosting, you can write modules that extend the framework itself.
 
 ```lua
-local DecoratorHandler = {}
+local __=_G() local decorators = {}
 
--- Intercepts functions tagged with specific decorators
-function DecoratorHandler.OnDecorated(func, params)
-    -- Logic to alter function behavior at runtime
-end
+game:RegisterDecorator("echo", function(_, func, message: string)
+    return function(...: any?): ...any?
+        print(message)
+        return func(...)
+    end
+end)
 
-return DecoratorHandler
+return __(decorators)
 ```
