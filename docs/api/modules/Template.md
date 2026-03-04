@@ -38,7 +38,7 @@ end
 -- Register as Service (if applicable)
 game:RegisterService("MyModule", MyModule)
 
-return setfenv(function() return __(MyModule) end, {script = script()})
+return __(MyModule)
 ```
 
 ::: tip Usage
