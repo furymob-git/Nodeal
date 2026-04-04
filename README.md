@@ -13,7 +13,7 @@
   <h3>A seamless Roblox framework built to break engine limits.</h3>
   <p>Nodeal unlocks restricted features and lets developers build without boundaries using a fully modular, optimized, and 100% Studio-native workflow.</p>
 
-  <a href="https://furymob-git.github.io/Nodeal/"><strong>View docs →</strong></a>
+  <a href="https://www.nodeal.dev/docs/"><strong>View docs →</strong></a>
   <br />
   <br />
   <a href="https://discord.gg/hTqXPRduHp">Join Discord</a>
