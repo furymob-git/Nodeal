@@ -62,5 +62,5 @@ Distributed under the **Nodeal Public License (NPL)**. See `LICENSE` for more in
 > **TL;DR:** You generally cannot sell the framework source code itself, but you **CAN** use it to build commercial games, plugins, and modules.
 
 <div align="center">
-  <sub>Built with ❤️ by the Nodeal Team</sub>
+  <sub>Built with ❤️ by the Nodeal Team and Azzury</sub>
 </div>
