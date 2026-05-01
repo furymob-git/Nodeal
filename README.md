@@ -43,12 +43,12 @@ A massive thank you to everyone who supports the development of Nodeal!
 
 <div align="center">
   <h4>Recent Donators</h4>
-  <a target="_blank" href="https://ko-fi.com/getnodeal">
+  <a href="https://ko-fi.com/getnodeal">
     <img src="https://api.nodeal.dev/v1/kofi/donators.svg" alt="Recent Donators" />
   </a>
 
   <h4>Monthly Subscribers</h4>
-  <a target="_blank" href="https://ko-fi.com/getnodeal">
+  <a href="https://ko-fi.com/getnodeal">
     <img src="https://api.nodeal.dev/v1/kofi/subscribers.svg" alt="Monthly Subscribers" />
   </a>
 </div>
