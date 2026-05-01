@@ -2,7 +2,7 @@
   <h1>Nodeal</h1>
   <p>
     <div align="center">
-  <a href="https://discord.gg/hTqXPRduHp"><img src="https://img.shields.io/discord/1464018264861577311?color=5865F2&label=Discord&logo=discord&logoColor=white&style=flat" alt="Discord" /></a>&nbsp;&nbsp;<a href="https://ko-fi.com/furymob"><img src="https://img.shields.io/badge/Ko--fi-Support%20Me-FF5E5B?logo=ko-fi&logoColor=white&style=flat" alt="Ko-fi" /></a>
+  <a href="https://discord.gg/hTqXPRduHp"><img src="https://img.shields.io/discord/1464018264861577311?color=5865F2&label=Discord&logo=discord&logoColor=white&style=flat" alt="Discord" /></a>&nbsp;&nbsp;<a href="https://ko-fi.com/getnodeal"><img src="https://img.shields.io/badge/Ko--fi-Support%20Me-FF5E5B?logo=ko-fi&logoColor=white&style=flat" alt="Ko-fi" /></a>
   <br />
   <a href="https://github.com/furymob-git/Nodeal/issues"><img src="https://img.shields.io/github/issues/furymob-git/Nodeal?logo=github&label=Issues&style=flat" alt="Issues" /></a>&nbsp;&nbsp;<a href="https://github.com/furymob-git/Nodeal/commits/main"><img src="https://img.shields.io/github/last-commit/furymob-git/Nodeal?logo=github&label=Last%20Update&style=flat" alt="Last Commit" /></a>
   <br />
