@@ -13,7 +13,7 @@
   <h3>A seamless Roblox framework built to break engine limits.</h3>
   <p>Nodeal unlocks restricted features and lets developers build without boundaries using a fully modular, optimized, and 100% Studio-native workflow.</p>
 
-  <a href="https://furymob-git.github.io/Nodeal/"><strong>View docs →</strong></a>
+  <a href="https://docs.nodeal.dev/"><strong>View docs →</strong></a>
   <br />
   <br />
   <a href="https://discord.gg/hTqXPRduHp">Join Discord</a>
@@ -43,12 +43,12 @@ A massive thank you to everyone who supports the development of Nodeal!
 
 <div align="center">
   <h4>Recent Donators</h4>
-  <a href="https://ko-fi.com/furymob">
+  <a href="https://ko-fi.com/getnodeal">
     <img src="https://api.nodeal.dev/v1/kofi/donators.svg" alt="Recent Donators" />
   </a>
 
   <h4>Monthly Subscribers</h4>
-  <a href="https://ko-fi.com/furymob">
+  <a href="https://ko-fi.com/getnodeal">
     <img src="https://api.nodeal.dev/v1/kofi/subscribers.svg" alt="Monthly Subscribers" />
   </a>
 </div>
