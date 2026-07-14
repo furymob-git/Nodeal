@@ -1,0 +1,57 @@
+name: Nodeal Sync
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.nodeal/**'
+  release:
+    types: [published]
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Sync to Nodeal
+        env:
+          NODEAL_API_KEY: ${{ secrets.NODEAL_API_KEY }}
+          PACKAGE_ID: "nodeal-framework"
+        run: |
+          if [ -z "$NODEAL_API_KEY" ]; then
+            echo "Error: NODEAL_API_KEY is not set in GitHub Secrets."
+            exit 1
+          fi
+
+          if [ "${{ github.event_name }}" == "release" ]; then
+            # Sync Release
+            echo "Syncing GitHub Release to Nodeal..."
+            ASSET_URL=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+              "https://api.github.com/repos/${{ github.repository }}/releases/tags/${{ github.event.release.tag_name }}" \
+              | jq -r '.assets[] | select(.name | endswith(".rbxm")) | .url')
+
+            if [ -n "$ASSET_URL" ] && [ "$ASSET_URL" != "null" ]; then
+              # Download asset
+              curl -sL -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -H "Accept: application/octet-stream" -o package.rbxm "$ASSET_URL"
+              
+              # Upload to Nodeal
+              curl -X POST "https://nodeal.dev/api/v1/packages/$PACKAGE_ID/versions?version=${{ github.event.release.tag_name }}" \
+                -H "Authorization: Bearer $NODEAL_API_KEY" \
+                -F "file=@package.rbxm"
+            fi
+          fi
+
+          if [ -d ".nodeal" ]; then
+            echo "Syncing .nodeal configuration..."
+            
+            # Zip the .nodeal folder and send it to the sync endpoint.
+            zip -r nodeal_config.zip .nodeal
+            
+            curl -X POST "https://nodeal.dev/api/v1/packages/$PACKAGE_ID/sync" \
+              -H "Authorization: Bearer $NODEAL_API_KEY" \
+              -H "Content-Type: application/zip" \
+              --data-binary "@nodeal_config.zip"
+          fi
