@@ -4,6 +4,7 @@
   "visibility": "PUBLIC",
   "tags": [
     "official",
-    "security"
+    "security",
+    "utility"
   ]
 }
