@@ -1,0 +1,10 @@
+{
+  "name": "Nodeal Framework",
+  "description": "Nodeal is the first fullstack framework built entirely for Roblox Studio. Clean architecture, blazing performance, absolute developer joy.",
+  "visibility": "PUBLIC",
+  "tags": [
+    "official",
+    "security",
+    "utility"
+  ]
+}
